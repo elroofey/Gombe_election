@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Gombe Election DApp</title>
+  <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+  <style>
+    body {
+      background-color: #2ecc71;
+      font-family: 'Arial', sans-serif;
+      color: #ffffff;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background-color: #27ae60;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      width: 300px;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button#voteButton {
+      background-color: #e74c3c;
+      color: #ffffff;
+    }
+
+    button#resultsButton {
+      background-color: #3498db;
+      color: #ffffff;
+    }
+
+    button:hover {
+      opacity: 0.8;
+    }
+
+    #voteMessage, #results {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Gombe Election DApp</h1>
+    <label for="candidateSelect">Choose a candidate:</label>
+    <select id="candidateSelect">
+      <option value="candidate1">Candidate 1</option>
+      <option value="candidate2">Candidate 2</option>
+      <option value="candidate3">Candidate 3</option>
+    </select>
+    <button id="voteButton">Vote</button>
+    <div id="voteMessage"></div>
+    <button id="resultsButton">Get Results</button>
+    <div id="results"></div>
+  </div>
+  <script>
+    document.getElementById('voteButton').addEventListener('click', function() {
+      const candidateSelect = document.getElementById('candidateSelect');
+      const selectedCandidate = candidateSelect.value;
+      
+      // This is where you'd normally interact with the blockchain
+      // For demonstration, we're just showing a message
+      document.getElementById('voteMessage').innerText = `You voted for ${selectedCandidate}!`;
+    });
+
+    document.getElementById('resultsButton').addEventListener('click', function() {
+      // This is where you'd normally get the results from the blockchain
+      // For demonstration, we're showing a static message
+      document.getElementById('results').innerText = 'Results will be shown here.';
+    });
+  </script>
+</body>
+</html>
